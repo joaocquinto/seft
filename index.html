@@ -1,82 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>João Cláudio Quinto – SEFT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fafafa;
-      color: #1a1a1a;
-      margin: 0;
-      padding: 0;
+    :root {
+      color-scheme: light dark;
     }
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: white;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-      border-radius: 10px;
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: Canvas;
+      color: CanvasText;
+      transition: all 0.3s ease;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
     }
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .subtitle {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      color: #444;
+      font-size: 2rem;
     }
     .info {
       margin-top: 1rem;
-      line-height: 1.6;
+      font-size: 1.1rem;
     }
-    .links a {
-      display: inline-block;
-      margin: 6px 8px 0 0;
-      padding: 8px 16px;
-      background-color: #1a1a1a;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background 0.3s ease;
-    }
-    .links a:hover {
-      background-color: #444;
-    }
-    footer {
-      margin-top: 3rem;
+    .buttons {
+      margin-top: 2rem;
       text-align: center;
+    }
+    .buttons a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 8px;
+      background-color: Highlight;
+      color: HighlightText;
+      font-weight: 600;
+    }
+    .lang-switcher {
+      text-align: center;
+      margin-top: 2rem;
       font-size: 0.9rem;
-      color: #777;
+    }
+    .lang-content {
+      display: none;
+    }
+    .lang-content.active {
+      display: block;
     }
   </style>
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+      document.getElementById(`lang-${lang}`).classList.add('active');
+    }
+    window.addEventListener('DOMContentLoaded', () => switchLang('en'));
+  </script>
 </head>
 <body>
-  <div class="container">
+  <header>
     <h1>João Cláudio Quinto 🇦🇴</h1>
-    <div class="subtitle">Independent Researcher | Affective AI & Symbolic Modeling</div>
-
-    <p><strong>Author of SEFT – Symbolic Emotional Fusion Theory</strong></p>
-    <p>📍 Luanda, Angola | 🌐 Global South Perspective</p>
-
+    <p>Independent Researcher | Affective AI & Symbolic Modeling</p>
+    <p>Author of <strong>SEFT – Symbolic Emotional Fusion Theory</strong></p>
     <div class="info">
-      <p><strong>📄 DOI:</strong> <a href="https://doi.org/10.5281/zenodo.15739333" target="_blank">10.5281/zenodo.15739333</a></p>
-      <p><strong>🔗 GitHub:</strong> <a href="https://github.com/joaocquinto/seft" target="_blank">joaocquinto/seft</a></p>
-      <p><strong>🧬 ORCID:</strong> <a href="https://orcid.org/0009-0005-1772-7403" target="_blank">0009-0005-1772-7403</a></p>
-      <p><strong>📬 Email:</strong> <a href="mailto:joao.quinto@proton.me">joao.quinto@proton.me</a></p>
+      📍 Luanda, Angola | 🌐 Global South Perspective<br/>
+      📄 <a href="https://doi.org/10.5281/zenodo.15739333" target="_blank">DOI do Artigo</a><br/>
+      🔗 <a href="https://github.com/joaocquinto/seft" target="_blank">GitHub</a> | 🧬 <a href="https://orcid.org/0009-0005-1772-7403" target="_blank">ORCID</a><br/>
+      📬 <a href="mailto:joao.quinto@proton.me">joao.quinto@proton.me</a>
     </div>
-
-    <div class="links">
-      <a href="https://doi.org/10.5281/zenodo.15739333" target="_blank">📄 View Paper (Zenodo)</a>
-      <a href="https://github.com/joaocquinto/seft" target="_blank">🔍 GitHub Repository</a>
+    <div class="buttons">
+      <a href="SEFT_Artigo.pdf" download>📥 Download PDF</a>
     </div>
+  </header>
 
-    <footer>
-      Developed with 🌍 from Luanda, Angola — sharing symbolic science with the world.
-    </footer>
+  <div class="lang-switcher">
+    🌐 <button onclick="switchLang('en')">English 🇬🇧</button>
+    <button onclick="switchLang('pt')">Português 🇵🇹</button>
   </div>
+
+  <main>
+    <section id="lang-en" class="lang-content">
+      <h2>Welcome</h2>
+      <p>This page presents the Symbolic Emotional Fusion Theory (SEFT), a novel computational and symbolic model for identifying authentic affective bonds. It is the author's first scientific publication, born from an independent initiative in Luanda, Angola 🇦🇴 — with a commitment to emotional truth and symbolic logic. Explore the research, download the full article, and get in touch if you'd like to collaborate on emotional AI, symbolic cognition, or affective simulations.</p>
+    </section>
+
+    <section id="lang-pt" class="lang-content">
+      <h2>Bem-vindo</h2>
+      <p>Esta página apresenta a Teoria da Fusão Emocional Simbólica (TFES), um modelo computacional e simbólico inovador para identificar vínculos afetivos autênticos. É a primeira publicação científica do autor, nascida de uma iniciativa independente em Luanda, Angola 🇦🇴 — com compromisso com a verdade emocional e a lógica simbólica. Explore a pesquisa, baixe o artigo completo e entre em contato se quiser colaborar em IA emocional, cognição simbólica ou simulações afetivas.</p>
+    </section>
+  </main>
 </body>
 </html>
