@@ -15,12 +15,11 @@
       padding: 2rem;
       background-color: Canvas;
       color: CanvasText;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: all 0.3s ease;
     }
     header {
       text-align: center;
       margin-bottom: 2rem;
-      animation: fadeIn 1s ease-in-out;
     }
     h1 {
       font-size: 2rem;
@@ -42,10 +41,6 @@
       background-color: Highlight;
       color: HighlightText;
       font-weight: 600;
-      transition: transform 0.2s ease;
-    }
-    .buttons a:hover {
-      transform: scale(1.05);
     }
     .lang-switcher {
       text-align: center;
@@ -54,41 +49,9 @@
     }
     .lang-content {
       display: none;
-      animation: fadeIn 0.5s ease-in-out;
     }
     .lang-content.active {
       display: block;
-    }
-    .contact-button {
-      display: block;
-      width: max-content;
-      margin: 1rem auto;
-      padding: 0.6rem 1.2rem;
-      background-color: Highlight;
-      color: HighlightText;
-      border-radius: 8px;
-      font-weight: 600;
-      text-align: center;
-      text-decoration: none;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-    .contact-button:hover {
-      transform: scale(1.05);
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @media (max-width: 600px) {
-      body {
-        padding: 1rem;
-      }
-      h1 {
-        font-size: 1.5rem;
-      }
-      .info {
-        font-size: 1rem;
-      }
     }
   </style>
   <script>
@@ -123,15 +86,13 @@
   <main>
     <section id="lang-en" class="lang-content">
       <h2>Welcome</h2>
-      <p>This page presents the Symbolic Emotional Fusion Theory (SEFT), a novel computational and symbolic model for identifying authentic affective bonds. Explore the research, download the full article, and get in touch if you'd like to collaborate on emotional AI, symbolic cognition, or affective simulations.</p>
+      <p>This page presents the Symbolic Emotional Fusion Theory (SEFT), a formally computable model rooted in symbolic affective logic, developed to identify authentic emotional bonds.</p>
     </section>
 
     <section id="lang-pt" class="lang-content">
       <h2>Bem-vindo</h2>
-      <p>Esta página apresenta a Teoria da Fusão Emocional Simbólica (TFES), um modelo computacional e simbólico inovador para identificar vínculos afetivos autênticos. Explore a pesquisa, baixe o artigo completo e entre em contato se quiser colaborar em IA emocional, cognição simbólica ou simulações afetivas.</p>
+      <p>Esta página apresenta a Teoria da Fusão Emocional Simbólica (TFES), um modelo formalmente computável baseado em lógica afetiva simbólica, desenvolvido para identificar vínculos emocionais autênticos.</p>
     </section>
   </main>
-
-  <a href="mailto:joao.quinto@proton.me" class="contact-button">📨 Contact Me</a>
 </body>
 </html>
