@@ -15,11 +15,12 @@
       padding: 2rem;
       background-color: Canvas;
       color: CanvasText;
-      transition: all 0.3s ease;
+      transition: background-color 0.5s ease, color 0.5s ease;
     }
     header {
       text-align: center;
       margin-bottom: 2rem;
+      animation: fadeInDown 1s ease-out;
     }
     h1 {
       font-size: 2rem;
@@ -27,10 +28,12 @@
     .info {
       margin-top: 1rem;
       font-size: 1.1rem;
+      animation: fadeIn 1.5s ease-in;
     }
     .buttons {
       margin-top: 2rem;
       text-align: center;
+      animation: fadeInUp 1.5s ease-in-out;
     }
     .buttons a {
       display: inline-block;
@@ -41,6 +44,10 @@
       background-color: Highlight;
       color: HighlightText;
       font-weight: 600;
+      transition: transform 0.2s ease;
+    }
+    .buttons a:hover {
+      transform: scale(1.05);
     }
     .lang-switcher {
       text-align: center;
@@ -49,9 +56,50 @@
     }
     .lang-content {
       display: none;
+      animation: fadeIn 1s ease;
     }
     .lang-content.active {
       display: block;
+    }
+    .contact-button {
+      margin-top: 1rem;
+      text-align: center;
+      animation: fadeInUp 2s ease-in-out;
+    }
+    .contact-button a {
+      padding: 0.6rem 1.2rem;
+      background-color: #444;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .contact-button a:hover {
+      background-color: #333;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .buttons a {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
     }
   </style>
   <script>
@@ -69,12 +117,16 @@
     <p>Author of <strong>SEFT – Symbolic Emotional Fusion Theory</strong></p>
     <div class="info">
       📍 Luanda, Angola | 🌐 Global South Perspective<br/>
-      📄 <a href="https://doi.org/10.5281/zenodo.15739333" target="_blank">DOI do Artigo</a><br/>
+      📄 <a href="https://doi.org/10.5281/zenodo.15739333" target="_blank">DOI of the Article</a><br/>
       🔗 <a href="https://github.com/joaocquinto/seft" target="_blank">GitHub</a> | 🧬 <a href="https://orcid.org/0009-0005-1772-7403" target="_blank">ORCID</a><br/>
       📬 <a href="mailto:joao.quinto@proton.me">joao.quinto@proton.me</a>
     </div>
     <div class="buttons">
-      <a href="SEFT_Artigo.pdf" download>📥 Download PDF</a>
+      <a href="SEFT_Artigo.pdf" download>📥 Download SEFT (PDF)</a>
+      <a href="joao_quinto_cv_en.pdf" download>📄 Download CV (EN)</a>
+    </div>
+    <div class="contact-button">
+      <a href="mailto:joao.quinto@proton.me">✉️ Contact Me</a>
     </div>
   </header>
 
@@ -86,12 +138,12 @@
   <main>
     <section id="lang-en" class="lang-content">
       <h2>Welcome</h2>
-      <p>This page presents the Symbolic Emotional Fusion Theory (SEFT), a formally computable model rooted in symbolic affective logic, developed to identify authentic emotional bonds.</p>
+      <p>This page presents the Symbolic Emotional Fusion Theory (SEFT), a formally computable model rooted in symbolic affective logic for identifying authentic affective bonds. Explore the research, download the full article, and get in touch if you'd like to collaborate on emotional AI, symbolic cognition, or affective simulations.</p>
     </section>
 
     <section id="lang-pt" class="lang-content">
       <h2>Bem-vindo</h2>
-      <p>Esta página apresenta a Teoria da Fusão Emocional Simbólica (TFES), um modelo formalmente computável baseado em lógica afetiva simbólica, desenvolvido para identificar vínculos emocionais autênticos.</p>
+      <p>Esta página apresenta a Teoria da Fusão Emocional Simbólica (TFES), um modelo computacional formal baseado em lógica afetiva simbólica para identificar vínculos afetivos autênticos. Explore a pesquisa, baixe o artigo completo e entre em contato se quiser colaborar em IA emocional, cognição simbólica ou simulações afetivas.</p>
     </section>
   </main>
 </body>
