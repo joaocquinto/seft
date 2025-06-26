@@ -15,11 +15,12 @@
       padding: 2rem;
       background-color: Canvas;
       color: CanvasText;
-      transition: all 0.3s ease;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
     header {
       text-align: center;
       margin-bottom: 2rem;
+      animation: fadeIn 1s ease-in-out;
     }
     h1 {
       font-size: 2rem;
@@ -32,7 +33,7 @@
       margin-top: 2rem;
       text-align: center;
     }
-    .buttons a, .contact-button a {
+    .buttons a {
       display: inline-block;
       margin: 0.5rem;
       padding: 0.75rem 1.5rem;
@@ -41,6 +42,10 @@
       background-color: Highlight;
       color: HighlightText;
       font-weight: 600;
+      transition: transform 0.2s ease;
+    }
+    .buttons a:hover {
+      transform: scale(1.05);
     }
     .lang-switcher {
       text-align: center;
@@ -49,13 +54,30 @@
     }
     .lang-content {
       display: none;
+      animation: fadeIn 0.5s ease-in-out;
     }
     .lang-content.active {
       display: block;
     }
     .contact-button {
+      display: block;
+      width: max-content;
+      margin: 1rem auto;
+      padding: 0.6rem 1.2rem;
+      background-color: Highlight;
+      color: HighlightText;
+      border-radius: 8px;
+      font-weight: 600;
       text-align: center;
-      margin-top: 1rem;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .contact-button:hover {
+      transform: scale(1.05);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     @media (max-width: 600px) {
       body {
@@ -66,10 +88,6 @@
       }
       .info {
         font-size: 1rem;
-      }
-      .buttons a, .contact-button a {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
       }
     }
   </style>
@@ -86,7 +104,6 @@
     <h1>João Cláudio Quinto 🇦🇴</h1>
     <p>Independent Researcher | Affective AI & Symbolic Modeling</p>
     <p>Author of <strong>SEFT – Symbolic Emotional Fusion Theory</strong></p>
-    <p><em>This is my first independent scientific publication.</em></p>
     <div class="info">
       📍 Luanda, Angola | 🌐 Global South Perspective<br/>
       📄 <a href="https://doi.org/10.5281/zenodo.15739333" target="_blank">DOI do Artigo</a><br/>
@@ -94,10 +111,7 @@
       📬 <a href="mailto:joao.quinto@proton.me">joao.quinto@proton.me</a>
     </div>
     <div class="buttons">
-      <a href="SEFT_Artigo.pdf" download>📥 Download PDF</a>
-    </div>
-    <div class="contact-button">
-      <a href="mailto:joao.quinto@proton.me">📧 Contact Me</a>
+      <a href="/docs/SEFT_Artigo.pdf" download>📥 Download PDF</a>
     </div>
   </header>
 
@@ -117,5 +131,7 @@
       <p>Esta página apresenta a Teoria da Fusão Emocional Simbólica (TFES), um modelo computacional e simbólico inovador para identificar vínculos afetivos autênticos. Explore a pesquisa, baixe o artigo completo e entre em contato se quiser colaborar em IA emocional, cognição simbólica ou simulações afetivas.</p>
     </section>
   </main>
+
+  <a href="mailto:joao.quinto@proton.me" class="contact-button">📨 Contact Me</a>
 </body>
 </html>
